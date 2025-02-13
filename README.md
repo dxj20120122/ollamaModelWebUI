@@ -92,7 +92,7 @@ Model.json
 
 这样你就可以在ollama 模型Web对话系统 (ollamaModelWebUI) 项目中选择你要使用的ollama模型 进行对话了。
 
-对话方面参考这个视频![ollamaModelWebUI](video/useollamaModelWebUI.mp4)
+对话方面参考这个视频![ollamaModelWebUI](video/usephpollamaModelWebUI.mp4)
 
 ## 项目常见问题
 
