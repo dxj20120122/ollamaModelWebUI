@@ -10,7 +10,7 @@ ollama 模型Web对话系统 (ollamaModelWebUI) 是基于php语言开发的ollam
 
 项目UI图片:
 
-![ollamaModelWebUI](tree/main/image/项目UI图片1.png)
+![ollamaModelWebUI](main/image/项目UI图片1.png)
 
 项目UI也是非常简约高端，适合新手使用。
 
@@ -51,7 +51,7 @@ ollama 模型Web对话系统 (ollamaModelWebUI) 项目的使用方式：
 
 6. 下载PHPstudy (PHP集成环境) [https://www.xp.cn](https://www.xp.cn)
 
-7. 下载过后打开PHPstudy 并打开WNMP 和 开机自启 ![ollamaModelWebUI](tree/main/image/PHPstudy操作图片示例.png)
+7. 下载过后打开PHPstudy 并打开WNMP 和 开机自启 ![ollamaModelWebUI](main/image/PHPstudy操作图片示例.png)
 
 8. 打开浏览器 输入 127.0.0.1 回车 查看是否下载成功
 
@@ -59,7 +59,7 @@ ollama 模型Web对话系统 (ollamaModelWebUI) 项目的使用方式：
 
 11. 打开浏览器 输入 127.0.0.1/ollamaModelWebUI 回车 进入ollama 模型Web对话系统 (ollamaModelWebUI) 项目 查看是否进入成功
 
-12. 再次打开ollama 进入 Model ![ollamaModelWebUI](tree/main/image/ollama%20Model%20UI.png) 选择你要使用的ollama模型 点击 选择参数 右侧选择复制 ![ollamaModelWebUI](tree/main/image/ollama%20Model%20UI%20Download.png) 打开终端或命令行 粘贴 回车 等待下载完成 当出现 >>> Send a message (/? for help) 说明下载成功 可以直接输入问题 开始与ollama模型对话
+12. 再次打开ollama 进入 Model ![ollamaModelWebUI](main/image/ollama%20Model%20UI.png) 选择你要使用的ollama模型 点击 选择参数 右侧选择复制 ![ollamaModelWebUI](main/image/ollama%20Model%20UI%20Download.png) 打开终端或命令行 粘贴 回车 等待下载完成 当出现 >>> Send a message (/? for help) 说明下载成功 可以直接输入问题 开始与ollama模型对话
 
 13. 打开本项目的Data文件夹下的Model.json文件 我们先逐一讲解一下Model.json文件的内容：
 
@@ -92,7 +92,7 @@ Model.json
 
 这样你就可以在ollama 模型Web对话系统 (ollamaModelWebUI) 项目中选择你要使用的ollama模型 进行对话了。
 
-对话方面参考这个视频![ollamaModelWebUI](tree/main/video/useollamaModelWebUI.mp4)
+对话方面参考这个视频![ollamaModelWebUI](main/video/useollamaModelWebUI.mp4)
 
 ## 项目常见问题
 
