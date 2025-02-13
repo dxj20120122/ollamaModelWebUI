@@ -1,0 +1,6 @@
+{
+    "models": [
+        {"id": "1", "name": "qwen:0.5b"}
+    ],
+    "defaultModel": "1"
+}
