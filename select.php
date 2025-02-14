@@ -16,7 +16,7 @@ $models = $data['models'];
 </head>
 <body>
     <div class="main">
-        <h3>您好 欢迎来到本地ollama模型Web通话选择页面 请选择您希望使用的模型 如果没有请下载模型并更新Model.json  谢谢</h3>
+        <h3>您好 欢迎来到本地ollama模型Web通话选择页面 请选择您希望使用的模型 如果没有请下载模型并<a style="color:red" href="manage.php">更新模型列表</a>  谢谢</h3>
         <?php foreach ($models as $model): ?>
             <p><a href="index.php?model=<?php echo $model['id']; ?>"><?php echo $model['name']; ?></a></p>
         <?php endforeach; ?>
