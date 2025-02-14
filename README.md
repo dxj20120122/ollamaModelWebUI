@@ -119,37 +119,37 @@ Model.json
 在ollama 或 phpstudy 时 使用迅雷下载 会更快
 ### ollama 下载地址
 #### Windows：
-    ```
+```
     https://ollama.com/download/OllamaSetup.exe 
-    ```
+```
 #### Mac：
-    ```
+```
     https://ollama.com/download/Ollama-darwin.zip 
-    ```
+```
 #### linux：
-    ```
+```
     curl -fsSL https://ollama.com/install.sh |sh
-    ```
+```
 
 
 ### phpstudy下载地址
 #### Windows：
-    ```
+```
     https://public.xp.cn/upgrades/phpStudy_64.zip 
-    ```
+```
 #### linux：
 ##### Centos安装脚本 
-    ```
+```
     sudo wget -O install.sh https://dl.xp.cn/dl/xp/install.sh & sudo bash install.sh
-    ```
+```
 ##### Debian安装脚本
-    ```
+```
     sudo wget -O install.sh https://dl.xp.cn/dl/xp/install.sh & sudo bash install.sh
-    ```
+```
 #### Mac：
-    ```
+```
     https://public.xp.cn/upgrades/phpstudy_install.dmg
-    ```
+```
 
 ## 项目注意事项
 
