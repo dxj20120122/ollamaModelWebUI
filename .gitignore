@@ -1,0 +1,73 @@
+# 操作系统生成的文件
+################*
+.DS_Store
+Thumbs.db
+
+# 编译生成的文件
+*.o
+*.ko
+*.exe
+*.dll
+*.so
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# PHP 相关
+/vendor/
+/composer.phar
+composer.lock
+
+# 配置文件
+.env
+config.php
+
+# 日志文件
+*.log
+logs/
+*.log.*
+
+# 临时文件
+temp/
+tmp/
+*.tmp
+*.swp
+*.swo
+
+# 运行环境
+/.idea/
+/.vscode/
+/nbproject/
+/nbproject/private/
+/.idea_modules/
+
+# 数据库文件
+*.sqlite
+*.db
+*.db3
+
+# 缓存文件
+.cache/
+/node_modules/
+/bower_components/
+/vendor/
+/dist/
+/build/
+
+# 安全相关
+.env.local
+.env.*.local
+
+# 其他
+# 忽略所有以 "ignore" 开头的文件
+ignore*/
+
+# 特定于项目的忽略
+/public/uploads/
+/uploads/
+/backup/
+/dump/
