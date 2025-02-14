@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <p><h1>本地ollama模型通话Web UI 请确保 PHP 环境正常  ollama 运行 Model.json更新<a href="select.php">👆点击选择模型</a> | <a href="manage.php">管理模型</a></h1></p>
+        <p><h1>本地ollama模型通话Web UI 请确保 PHP 环境正常  ollama 运行  模型列表更新<a href="select.php">👆点击选择模型</a> | <a href="manage.php">管理模型</a></h1></p>
 
         <div id="chat-box">
             <!-- 对话内容将显示在这里 -->
