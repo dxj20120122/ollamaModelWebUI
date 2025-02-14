@@ -120,35 +120,35 @@ Model.json
 ### ollama 下载地址
 #### Windows：
 ```
-    https://ollama.com/download/OllamaSetup.exe 
+https://ollama.com/download/OllamaSetup.exe 
 ```
 #### Mac：
 ```
-    https://ollama.com/download/Ollama-darwin.zip 
+https://ollama.com/download/Ollama-darwin.zip 
 ```
 #### linux：
 ```
-    curl -fsSL https://ollama.com/install.sh |sh
+curl -fsSL https://ollama.com/install.sh |sh
 ```
 
 
 ### phpstudy下载地址
 #### Windows：
 ```
-    https://public.xp.cn/upgrades/phpStudy_64.zip 
+https://public.xp.cn/upgrades/phpStudy_64.zip 
 ```
 #### linux：
 ##### Centos安装脚本 
 ```
-    sudo wget -O install.sh https://dl.xp.cn/dl/xp/install.sh & sudo bash install.sh
+sudo wget -O install.sh https://dl.xp.cn/dl/xp/install.sh & sudo bash install.sh
 ```
 ##### Debian安装脚本
 ```
-    sudo wget -O install.sh https://dl.xp.cn/dl/xp/install.sh & sudo bash install.sh
+sudo wget -O install.sh https://dl.xp.cn/dl/xp/install.sh & sudo bash install.sh
 ```
 #### Mac：
 ```
-    https://public.xp.cn/upgrades/phpstudy_install.dmg
+https://public.xp.cn/upgrades/phpstudy_install.dmg
 ```
 
 ## 项目注意事项
