@@ -1,0 +1,340 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 容器样式 */
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    animation: fadeInDown 1s ease-out;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+    }
+}
+
+/* 标题样式 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    animation: fadeInDown 1s ease-out;
+}
+
+h1 a {
+    color: #7590ff;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h1 a {
+        font-size: 16px;
+    }
+}
+
+.model-select {
+    color: #00796b;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.model-select:hover {
+    color: #004d40;
+    text-decoration: underline;
+}
+
+/* 对话框样式 */
+#chat-box {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 消息样式 */
+.message {
+    margin-bottom: 20px;
+    align-self: flex-start;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.message.ai {
+    align-self: flex-end;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px 15px 0 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.message.user {
+    align-self: flex-start;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px 15px 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.message p {
+    padding: 15px 25px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    position: relative;
+    color: #fff;
+    white-space: pre-wrap; /* 支持换行 */
+    color: #fff !important; /* 确保文字颜色为白色 */
+}
+
+.message p strong {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #8dfff2;
+}
+
+/* 表单样式 */
+#chat-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: #343434;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out;
+    margin-bottom: 20px;
+}
+
+#user-input {
+    flex: 1;
+    resize: none;
+    padding: 20px 25px;
+    border: 1px solid rgba(33, 33, 33, 0.5);
+    border-radius: 30px;
+    margin-right: 20px;
+    font-size: 1.1em;
+    background: rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s, background 0.3s;
+    color: #ffffff; /* 文字颜色 */
+}
+
+#user-input:focus {
+    border-color: #36504d;
+    outline: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff; /* 保持文字颜色 */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 思考动画样式 */
+.thinking-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 0 10px;
+    animation: bounce 1s infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 错误消息样式 */
+.error-message {
+    background: rgba(255, 235, 238, 0.8);
+    color: #c62828;
+    padding: 15px 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    display: none;
+    animation: fadeIn 5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 800px) {
+    .container {
+        padding: 20px;
+        height: 100vh;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    #chat-form {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 5px;
+    }
+
+    #user-input {
+        margin-right: 0;
+        margin-bottom: 20px;
+        border-radius: 20px;
+    }
+
+    button {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    .thinking-animation {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.container {
+    background: #000;
+    width: 100%;
+    height: 100vh;
+    color: #ffffff;
+}
+
+#chat-box {
+    overflow-y: auto; /* 当内容超出容器高度时显示垂直滚动条 */
+}
+
+#chat-box::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
+}
+
+#chat-box {
+    -ms-overflow-style: none;  /* IE 和 Edge 隐藏滚动条 */
+    scrollbar-width: none;  /* Firefox 隐藏滚动条 */
+}
+
+pre {
+    background-color: #282c34;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+pre code {
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 1em;
+    line-height: 1.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
