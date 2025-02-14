@@ -1,4 +1,4 @@
-# ollama 模型 Web(网页)对话系统 (ollamaModelWebUI) php后端
+# ollama 模型 Web(网页)对话系统 (ollamaModelWebUI) php后端 持续更新!
 
 ## 宝子们看过来! 一篇纯新手详细教程 想要部署本地大模型的宝子们看过来!
 
@@ -61,37 +61,24 @@ ollama 模型Web对话系统 (ollamaModelWebUI) 项目的使用方式：
 
 12. 再次打开ollama 进入 Model ![ollamaModelWebUI](image/ollama%20Model%20UI.png) 选择你要使用的ollama模型 点击 选择参数 右侧选择复制 ![ollamaModelWebUI](image/ollama%20Model%20UI%20Download.png) 打开终端或命令行 粘贴 回车 等待下载完成 当出现 >>> Send a message (/? for help) 说明下载成功 可以直接输入问题 开始与ollama模型对话
 
-13. 打开本项目的Data文件夹下的Model.json文件 我们先逐一讲解一下Model.json文件的内容：
-
-Model.json
+13. 打开本项目主页面 点击右上角的管理模型
+![ollamaModelWebUI](image/主页点击管理模型.png)
+在管理模型的页面中输入模型ID 和 模型名称
+![ollamaModelWebUI](image/管理模型添加模型.png)
+如果不知道模型名称可以打开命令行 输入一下命令来查看模型列表
 ```
-{
-    "models": [
-        {"id": "1", "name": "qwen:0.5b"}   // 这里的id和name可以自定义，id是模型的唯一标识 建议使用有顺序的数字，name是模型的名称，这里的模型是qwen:0.5b，可以自行替换为其他ollama模型
-    ],
-    "defaultModel": "1"                    // 这里的defaultModel是默认使用的模型，可以自行替换为其他ollama模型的id
-}
-
+ollama list
 ```
+输入后在NAME(名字)这一列添加你想添加的模型(我的建议是全添加上)
+![ollamaModelWebUI](image/模型列表.png)
+当然 也可以直接删除你不需要或没有的模型
+![ollamaModelWebUI](image/删除模型.png)
 
-例如你刚刚下载了好几个模型 分别是qwen:0.5b、qwen2:0.5b、qwen2.5:0.5b、codeqwen:1.5b 你只需要在Model.json文件中添加如下内容：
-
-Model.json
-```
-{
-    "models": [
-        {"id": "1", "name": "qwen:0.5b"},
-        {"id": "2", "name": "qwen2:0.5b"},
-        {"id": "3", "name": "qwen2.5:0.5b"},
-        {"id": "4", "name": "codeqwen:1.5b"}
-    ],
-    "defaultModel": "1"
-}
-
-```
-
-这样你就可以在ollama 模型Web对话系统 (ollamaModelWebUI) 项目中选择你要使用的ollama模型 进行对话了。
-
+14. 对话使用
+在主页底下有一个对话框 用光标点击对话框 即可输入
+输入完成后可直接按下Enter键发送
+如果想换行 按住Ctrl不松再按下Enter 或者 按住Shift不松再按下Enter
+稍等片刻后会输出结果 如果失败请向下查看常见问题
 对话方面参考这个视频![ollamaModelWebUI](video/usephpollamaModelWebUI.mp4)
 
 ## 项目常见问题
@@ -108,15 +95,15 @@ Model.json
 4. 为什么在ollamaModelWebUI项目中无法使用ollama模型？
 请检查你的Model.json文件是否正确 检测你的PHP环境是否安装了cURL 检测ollama日志是否有报错信息。
 
-5. 为什么模型未响应
-模型输出时间过长 或 最大Tokens限制 请适当调整模型参数。可以尝试使用其他ollama模型和稍后再试
+5. 为什么页面(或模型)未响应 或 失败
+模型输出时间过长 | 最大Tokens限制 请适当调整模型参数 | 没有模型 | 没找到模型文件 | 没有找到后端(路径不要有中文和空格) | 没有PHP环境 | 文件缺失 | ollama没开启 等  可以尝试使用其他ollama模型和稍后再试
 
 6. 会不会持续更新
 会
 
 7. ollama 下载过慢
 请尝试更换网络环境 使用镜像源 或者 使用迅雷下载
-在ollama 或 phpstudy 时 使用迅雷下载 会更快
+在ollama 或 phpstudy 时 使用迅雷下载 (本项目自带安装包) 会更快
 ### ollama 下载地址
 #### Windows：
 ```
@@ -153,7 +140,7 @@ https://public.xp.cn/upgrades/phpstudy_install.dmg
 
 ## 项目注意事项
 
-1. 请不要将本项目部署到公网上，否则可能会被黑客攻击。
+1. 请不要将ollama直接部署到公网上，否则可能会被黑客攻击或没恶意使用。
 
 2. 请不要将本项目用于违法犯罪活动，否则后果自负。
 
