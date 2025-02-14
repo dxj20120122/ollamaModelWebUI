@@ -112,8 +112,13 @@ h1 a:hover {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .message.ai {
@@ -139,8 +144,10 @@ h1 a:hover {
     line-height: 1.6;
     position: relative;
     color: #fff;
-    white-space: pre-wrap; /* 支持换行 */
-    color: #fff !important; /* 确保文字颜色为白色 */
+    white-space: pre-wrap;
+    /* 支持换行 */
+    color: #fff !important;
+    /* 确保文字颜色为白色 */
 }
 
 .message p strong {
@@ -175,14 +182,20 @@ h1 a:hover {
     font-size: 1.1em;
     background: rgba(0, 0, 0, 0.3);
     transition: border-color 0.3s, background 0.3s;
-    color: #ffffff; /* 文字颜色 */
+    color: #ffffff;
+}
+
+/* 滚动条整体样式 */
+#user-input::-webkit-scrollbar {
+    overflow-y: auto;
 }
 
 #user-input:focus {
     border-color: #36504d;
     outline: none;
     background: rgba(0, 0, 0, 0.5);
-    color: #ffffff; /* 保持文字颜色 */
+    color: #ffffff;
+    /* 保持文字颜色 */
 }
 
 button {
@@ -230,9 +243,12 @@ button:hover {
 }
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-15px);
     }
@@ -250,8 +266,13 @@ button:hover {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInDown {
@@ -259,6 +280,7 @@ button:hover {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -310,18 +332,41 @@ button:hover {
     color: #ffffff;
 }
 
-#chat-box {
-    overflow-y: auto; /* 当内容超出容器高度时显示垂直滚动条 */
+/* #chat-box {
+    overflow-y: auto; 当内容超出容器高度时显示垂直滚动条
 }
 
 #chat-box::-webkit-scrollbar {
-    display: none; /* 隐藏滚动条 */
+    display: none; 隐藏滚动条
 }
 
 #chat-box {
-    -ms-overflow-style: none;  /* IE 和 Edge 隐藏滚动条 */
-    scrollbar-width: none;  /* Firefox 隐藏滚动条 */
+    -ms-overflow-style: none;  IE 和 Edge 隐藏滚动条
+    scrollbar-width: none;  Firefox 隐藏滚动条
+} */
+
+/* 滚动条整体样式 */
+#chat-box::-webkit-scrollbar {
+    width: 15px;
 }
+
+/* 滚动条滑块样式 */
+#chat-box::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+/* 滚动条滑块悬停样式 */
+#chat-box::-webkit-scrollbar-thumb:hover {
+    background: #f40;
+}
+
+/* 滚动条轨道样式 */
+#chat-box::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #1890ff;
+}
+
 
 pre {
     background-color: #282c34;
@@ -336,5 +381,5 @@ pre code {
     word-wrap: break-word;
     font-size: 1em;
     line-height: 1.25rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier 新建, monospace;
 }
