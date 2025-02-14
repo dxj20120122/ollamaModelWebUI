@@ -30,7 +30,7 @@ SOFTWARE.
 
 Contributions to [ollamaModelWebUI] are welcome! Please open a pull request or issue on the [GitHub repository](https://github.com/dxj20120122/ollamaModelWebUI).
 
-## Acknowledgments  &   Thanks
+## Acknowledgments
 
 - [Parsedown](https://github.com/erusev/parsedown)
 - [highlight](https://github.com/highlightjs/highlight.js)
