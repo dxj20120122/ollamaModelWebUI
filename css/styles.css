@@ -108,7 +108,7 @@ h1 a:hover {
 .message {
     margin-bottom: 20px;
     align-self: flex-start;
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 3s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -250,7 +250,7 @@ button:hover {
     }
 
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-30px);
     }
 }
 
@@ -263,16 +263,6 @@ button:hover {
     margin-top: 20px;
     display: none;
     animation: fadeIn 5s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 @keyframes fadeInDown {
@@ -381,5 +371,97 @@ pre code {
     word-wrap: break-word;
     font-size: 1em;
     line-height: 1.25rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier 新建, monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+/* 复制按钮样式 */
+.code-container {
+    position: relative;
+    margin: 10px 0;
+}
+
+.copy-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* 思考过程样式 */
+.think-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #4CAF50;
+    margin: 10px 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.think-header {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.think-header .arrow {
+    transition: transform 0.3s;
+}
+
+.think-header:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.think-content {
+    padding: 10px;
+    display: none;
+    white-space: pre-wrap;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.think-container.expanded .think-content {
+    display: block;
+}
+
+.think-container.expanded .arrow {
+    transform: rotate(90deg);
+}
+
+/* 复制成功提示 */
+.copy-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 255, 0, 0.2);
+    color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #4CAF50;
+    backdrop-filter: blur(5px);
+    display: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        top: -50px;
+        opacity: 0;
+    }
+    to {
+        top: 20px;
+        opacity: 1;
+    }
 }
