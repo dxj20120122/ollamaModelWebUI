@@ -100,13 +100,58 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
+
+
+
+    // 添加全局复制函数
+    window.copyCode = function(button) {
+        const code = button.nextElementSibling.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            showCopyNotification();
+        });
+    };
+
+    function showCopyNotification() {
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = '✓ 复制成功';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => notification.remove(), 300);
+        }, 2000);
+    }
+
+    // 处理思考容器的点击事件
+    chatBox.addEventListener('click', (e) => {
+        const header = e.target.closest('.think-header');
+        if (header) {
+            const container = header.parentElement;
+            container.classList.toggle('expanded');
+        }
+    });
+
+
+
     function appendMessage(sender, message, type) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', type);
         messageElement.innerHTML = `<p><strong>${sender}:</strong> ${message}</p>`;
         chatBox.appendChild(messageElement);
+        
+        // 自动展开第一个思考容器
+        const firstThink = messageElement.querySelector('.think-container');
+        if (firstThink) {
+            firstThink.classList.add('expanded');
+        }
+        
         chatBox.scrollTop = chatBox.scrollHeight;
     }
+
+
+    
+
 
     function showError(message) {
         errorMessage.textContent = message;
