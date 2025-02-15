@@ -12,6 +12,13 @@ ollama 模型Web对话系统 (ollamaModelWebUI) 是基于php语言开发的ollam
 
 ![ollamaModelWebUI](image/项目UI图片1.png)
 
+注意 在最近新增了一个实用功能
+在思考模型中的think标签的新UI样式 非常美观 可隐藏 实用~
+
+![ollamaModelWebUI](image/非隐藏的模型思考输出截图.png)
+
+![ollamaModelWebUI](image/隐藏的模型思考输出截图.png)
+
 项目UI也是非常简约高端，适合新手使用。
 
 ## ollama模型简介
@@ -79,7 +86,7 @@ ollama list
 输入完成后可直接按下Enter键发送
 如果想换行 按住Ctrl不松再按下Enter 或者 按住Shift不松再按下Enter
 稍等片刻后会输出结果 如果失败请向下查看常见问题
-对话方面参考这个视频![ollamaModelWebUI](video/usephpollamaModelWebUI.mp4)
+对话方面参考这个视频[视频](video/usephpollamaModelWebUI.mp4)
 
 ## 项目常见问题
 
