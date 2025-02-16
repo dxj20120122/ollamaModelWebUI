@@ -57,16 +57,34 @@ if ($response === false) {
     // 解析 JSON 响应
     $result = json_decode($response, true);
     if (isset($result['choices'][0]['text'])) {
+        // 处理 <think> 标签
+        $processedResponse = preg_replace_callback(
+            '/<think>(.*?)<\/think>/s',
+            function ($matches) {
+                $content = htmlspecialchars(trim($matches[1]));
+                return '<div class="think-container">
+                    <div class="think-header">
+                        <span class="arrow">▶</span> 思考过程
+                    </div>
+                    <div class="think-content">'.$content.'</div>
+                </div>';
+            },
+            $result['choices'][0]['text']
+        );
+
         // 将 Markdown 转换为 HTML
-        $htmlResponse = $parsedown->text($result['choices'][0]['text']);
+        $htmlResponse = $parsedown->text($processedResponse);
 
-        // 去掉多余的 <p> 标签
-        $htmlResponse = preg_replace('/<p>(.*?)<\/p>/', '$1', $htmlResponse);
-
-        // 将代码块的标签包裹为 <pre><code> 以支持高亮
-        $htmlResponse = preg_replace(
-            '/```(.*?)```/s',
-            '<pre><code>$1</code></pre>',
+        // 添加复制按钮到代码块
+        $htmlResponse = preg_replace_callback(
+            '/<pre><code>(.*?)<\/code><\/pre>/s',
+            function ($matches) {
+                $code = htmlspecialchars($matches[1]);
+                return '<div class="code-container">
+                    <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                    <pre><code>'.$code.'</code></pre>
+                </div>';
+            },
             $htmlResponse
         );
 
