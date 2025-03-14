@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>示例 - Ollama Model Web UI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <link rel="stylesheet" href="css/nav.css">
+    <div id="nav-placeholder"></div>
+    <script>
+        fetch('components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
+    <header class="hero">
+        <div class="container">
+            <h1>使用示例</h1>
+            <p class="subtitle">探索Ollama Model Web UI的实际应用场景</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="examples">
+            <div class="container">
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h2>基础对话示例</h2>
+                        <div class="content">
+                            <h3>1. 智能问答</h3>
+                            <div class="example-chat">
+                                <div class="message user">你能帮我解释一下量子计算的基本原理吗？</div>
+                                <div class="message assistant">量子计算的基本原理建立在量子力学的基础上。与经典计算机使用的比特（0或1）不同，量子计算机使用量子比特（qubit），它可以同时处于多个状态的叠加。这种特性使得量子计算机在处理某些特定问题时，比如密码破解和分子模拟等，具有显著的优势。</div>
+                            </div>
+                            
+                            <h3>2. 代码辅助</h3>
+                            <div class="example-chat">
+                                <div class="message user">如何使用Python实现快速排序算法？</div>
+                                <div class="message assistant">这是一个简洁的快速排序实现：
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+
+# 使用示例
+numbers = [3, 6, 8, 10, 1, 2, 1]
+print(quicksort(numbers))  # 输出: [1, 1, 2, 3, 6, 8, 10]
+
+快速排序的核心思想是：
+1. 选择一个基准值（pivot）
+2. 将数组分为小于、等于和大于基准值的三部分
+3. 递归地对左右两部分进行排序</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h2>Web开发示例</h2>
+                        <div class="content">
+                            <h3>1. 现代化表单设计</h3>
+                            <div class="example-chat">
+                                <div class="message user">请提供一个带有验证和样式的现代化表单示例。</div>
+                                <div class="message assistant">这是一个使用HTML5和CSS的现代化表单示例：
+
+<form class="modern-form" onsubmit="return validateForm()">
+    <div class="form-group">
+        <label for="username">用户名</label>
+        <input type="text" id="username" 
+               pattern="[A-Za-z0-9]{3,}" 
+               title="至少3个字符，仅允许字母和数字" 
+               required>
+        <span class="hint">至少3个字符，仅允许字母和数字</span>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">邮箱地址</label>
+        <input type="email" id="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" id="password"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+               title="至少8个字符，包含大小写字母和数字"
+               required>
+        <span class="hint">至少8个字符，包含大小写字母和数字</span>
+    </div>
+    
+    <button type="submit" class="btn primary">注册</button>
+</form>
+
+<style>
+.modern-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.hint {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 0.5rem;
+}
+</style></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h2>高级应用示例</h2>
+                        <div class="content">
+                            <h3>1. 数据可视化</h3>
+                            <div class="example-chat">
+                                <div class="message user">如何使用Python创建交互式数据可视化？</div>
+                                <div class="message assistant">这是一个使用Plotly创建交互式图表的示例：
+
+import plotly.express as px
+import pandas as pd
+
+# 创建示例数据
+df = pd.DataFrame({
+    '月份': ['1月', '2月', '3月', '4月', '5月', '6月'],
+    '销售额': [1200, 1900, 1500, 2100, 2400, 2800],
+    '成本': [800, 1200, 1000, 1400, 1600, 1900]
+})
+
+# 创建交互式折线图
+fig = px.line(df, x='月份', y=['销售额', '成本'],
+              title='月度销售额与成本分析',
+              labels={'value': '金额（元）', 'variable': '类别'},
+              template='plotly_white')
+
+# 添加悬停效果
+fig.update_traces(mode='lines+markers')
+
+# 自定义样式
+fig.update_layout(
+    hovermode='x unified',
+    legend=dict(orientation='h', yanchor='bottom', y=1.02),
+    margin=dict(t=100)
+)
+
+# 显示图表
+fig.show()
+
+这个示例展示了如何：
+1. 创建交互式折线图
+2. 添加悬停效果
+3. 自定义图表样式
+4. 优化图表布局</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Ollama Model Web UI. 在GitHub上查看 <a href="https://github.com/dxj20120122/ollamaModelWebUI">项目源码</a></p>
+        </div>
+    </footer>
+</body>
+</html>

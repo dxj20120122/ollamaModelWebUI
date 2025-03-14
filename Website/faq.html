@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题 - Ollama Model Web UI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <link rel="stylesheet" href="css/nav.css">
+    <div id="nav-placeholder"></div>
+    <script>
+        fetch('components/nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
+    <header class="hero">
+        <div class="container">
+            <h1>常见问题</h1>
+            <p class="subtitle">解答您在使用过程中可能遇到的问题</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="faq">
+            <div class="container">
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h2>安装与配置</h2>
+                        <div class="faq-content">
+                            <div class="question">
+                                <h3>如何确保Ollama服务正在运行？</h3>
+                                <p>您可以通过以下步骤检查：</p>
+                                <ol>
+                                    <li>打开任务管理器查看Ollama进程</li>
+                                    <li>访问http://localhost:11434确认服务状态</li>
+                                    <li>检查Ollama服务日志</li>
+                                </ol>
+                            </div>
+
+                            <div class="question">
+                                <h3>为什么我无法添加新模型？</h3>
+                                <p>常见原因包括：</p>
+                                <ul>
+                                    <li>网络连接问题</li>
+                                    <li>磁盘空间不足</li>
+                                    <li>模型名称输入错误</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h2>使用问题</h2>
+                        <div class="faq-content">
+                            <div class="question">
+                                <h3>如何提高模型响应速度？</h3>
+                                <p>您可以尝试以下方法：</p>
+                                <ul>
+                                    <li>使用更轻量级的模型</li>
+                                    <li>优化系统资源配置</li>
+                                    <li>减少并发请求数量</li>
+                                </ul>
+                            </div>
+
+                            <div class="question">
+                                <h3>为什么有时会出现超时错误？</h3>
+                                <p>可能的原因：</p>
+                                <ul>
+                                    <li>系统资源不足</li>
+                                    <li>网络连接不稳定</li>
+                                    <li>请求队列过长</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h2>开发相关</h2>
+                        <div class="faq-content">
+                            <div class="question">
+                                <h3>如何集成到自己的项目中？</h3>
+                                <p>您可以通过以下方式集成：</p>
+                                <ul>
+                                    <li>使用API接口</li>
+                                    <li>引用相关PHP类库</li>
+                                    <li>修改配置文件</li>
+                                </ul>
+                            </div>
+
+                            <div class="question">
+                                <h3>如何自定义模型参数？</h3>
+                                <p>可以通过以下方式：</p>
+                                <ul>
+                                    <li>修改配置文件</li>
+                                    <li>使用API参数</li>
+                                    <li>在界面中设置</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Ollama Model Web UI. 在GitHub上查看 <a href="https://github.com/dxj20120122/ollamaModelWebUI">项目源码</a></p>
+        </div>
+    </footer>
+</body>
+</html>
